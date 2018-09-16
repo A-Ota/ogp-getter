@@ -1,0 +1,13 @@
+{
+  "name": "chatwork",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "iconv": "^2.3.0",
+    "jsdom": "^12.0.0",
+    "request": "^2.88.0"
+  }
+}
