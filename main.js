@@ -43,8 +43,10 @@ http.createServer(function (req, res) {
         var index = contentType.indexOf('charset=');
         if (index >= 0) {
           var charset = contentType.substr(index + 8, contentType.length - 8);
-          var iconv = new Iconv(charset, `UTF-8//TRANSLIT//IGNORE`);
-          body = iconv.convert(body).toString();
+          if (charset != 'none') {
+            var iconv = new Iconv(charset, `UTF-8//TRANSLIT//IGNORE`);
+            body = iconv.convert(body).toString();
+          }
         }
       }
       const dom = new JSDOM(body);
